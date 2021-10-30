@@ -10,7 +10,7 @@ const TourPackages = () => {
   const [packages,setPackages] = useState([])
   useEffect(()=>{
     toggleSpinner('inline-block')
-    fetch('http://localhost:5000/packages')
+    fetch('https://secret-waters-06679.herokuapp.com/packages')
     .then(res => res.json())
     .then(data => {
       setPackages(data)

@@ -8,14 +8,17 @@ const ManageOrders = () => {
     
     
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://secret-waters-06679.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
 
     const deleteOrder = (id) => {
         console.log(id)
-        const url = `http://localhost:5000/orders/${id}`
+        //  eslint-disable-next-line no-restricted-globals
+      const isConfirm =   confirm('Ar You Sure You Want To Remove Order')
+      if(isConfirm){
+        const url = `https://secret-waters-06679.herokuapp.com/orders/${id}`
         fetch(url,{
             method:'DELETE'
             
@@ -28,9 +31,11 @@ const ManageOrders = () => {
                 setOrders(remaining)
             }
         })
+      }
+        
     }
     const approveOrder = (order,id) => {
-        const url = `http://localhost:5000/orders/${id}`
+        const url = `https://secret-waters-06679.herokuapp.com/orders/${id}`
         console.log(order)
         const approvedOrder = {
             address: order.address,
@@ -66,8 +71,8 @@ const ManageOrders = () => {
     return (
         <div className='manage-orders'>
             <h1>Manage Orders</h1>
-            <div className="order-list">
-                <ListGroup >
+            <div className="manage-order-list">
+                <ListGroup className='manage-order-list-grp' >
 
                     {
                         orders.map(item => <ListGroup.Item action variant="light">
@@ -81,12 +86,12 @@ const ManageOrders = () => {
   <ListGroup.Item>Price: {item.price}$</ListGroup.Item>
   <ListGroup.Item>Days: {item.days}</ListGroup.Item>
   <ListGroup.Item>Status: {item.status}</ListGroup.Item>
-  <ListGroup.Item>
+  <ListGroup.Item id='list-group-items-btns'>
 
 
-  <Button onClick={()=> approveOrder(item,item._id)}  className='card-btn'variant="primary"
+  <Button onClick={()=> approveOrder(item,item._id)}  className='card-btn approve-btn'variant="primary"
   >Approve Order</Button>
-      <Button onClick={()=>deleteOrder(item._id)} style={{marginLeft:'20px',}}  variant="danger"
+      <Button className='delete-btn' onClick={()=>deleteOrder(item._id)}   variant="danger"
   >Delete Order</Button>
 
 

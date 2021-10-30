@@ -22,7 +22,7 @@ const AddPackage = () => {
             price: priceValue,
             days: daysValue
         }
-        fetch(`http://localhost:5000/packages`,{
+        fetch(`https://secret-waters-06679.herokuapp.com/packages`,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -21,7 +21,7 @@ const PlaceOrder = () => {
    
 
     useEffect(() => {
-        fetch(`http://localhost:5000/packages/${packageId}`)
+        fetch(`https://secret-waters-06679.herokuapp.com/packages/${packageId}`)
             .then(res => res.json())
             .then(data => setTourPackage(data))
     }, [])
@@ -45,7 +45,7 @@ const PlaceOrder = () => {
             status: 'pending'
 
     }
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://secret-waters-06679.herokuapp.com/orders`, {
             method: 'POST',
             headers :{
                 'content-type': 'application/json'

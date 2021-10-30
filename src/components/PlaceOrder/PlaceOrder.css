@@ -1,0 +1,20 @@
+.place-order{
+    height: 94vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.place-order-form-container{
+    width: 60%;
+}
+.place-order-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.input{
+    width: 100%;
+}

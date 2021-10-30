@@ -1,0 +1,39 @@
+.cardBody{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.card-btn{
+    background-color: #2ecc71;
+    border: none;
+}
+.card-btn:hover{
+    background-color: #27ae60;
+}
+.card-link{
+    color: white;
+    text-decoration: none;
+}
+.card-link:hover{
+    color: white;
+}
+.package-card{
+    height: 45vh;
+    background-color: transparent;
+    /* color: #333333; */
+    color: white;
+    border: 1px solid #2ecc71;
+    border-radius: 20px;
+}
+.package-card img{
+    /* border-radius: 20px 20px 0px 0px ; */
+    border-radius: 20px 20px 20px 20px;
+    transition: .3s;
+    height: 23vh;
+}
+/* .package-card img:hover{
+    transform: translate(1.1)!important;
+} */
+@media screen and (max-width: 500px) {
+    
+}

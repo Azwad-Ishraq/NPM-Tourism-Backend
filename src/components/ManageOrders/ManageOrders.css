@@ -1,0 +1,9 @@
+.manage-orders{
+    height: 110vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    
+    align-items: center;
+}

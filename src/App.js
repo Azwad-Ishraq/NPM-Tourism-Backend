@@ -1,23 +1,60 @@
-import logo from './logo.svg';
 import './App.css';
+import NavbarComp from './components/NavbarComp/NavbarComp';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import Footer from './components/Footer/Footer';
+import HomeCompos from './components/HomeCompos/HomeCompos'
+import initializeAuthentication from './Firebase/Firebase.init';
+import AuthProvider from './context/AuthProvider'
+import Login from './components/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import MyOrders from './components/MyOrders/MyOrders';
+import ManageOrders from './components/ManageOrders/ManageOrders';
+import AddPackage from './components/AddPackage/AddPackage';
+initializeAuthentication()
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <BrowserRouter>
+
+          <NavbarComp></NavbarComp>
+
+          <Switch>
+
+            <Route exact path='/'>
+              <HomeCompos></HomeCompos>
+              <Footer></Footer>
+            </Route>
+            <Route  path='/home'>
+              <HomeCompos></HomeCompos>
+              <Footer></Footer>
+            </Route>
+
+
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            
+            <PrivateRoute path='/placeOrder/:packageId'>
+                <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
+            <PrivateRoute path='/myorders'>
+              <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path='/manage'>
+              <ManageOrders></ManageOrders>
+            </PrivateRoute>
+            <PrivateRoute path='/addService'>
+              <AddPackage></AddPackage>
+            </PrivateRoute>
+          </Switch>
+          
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

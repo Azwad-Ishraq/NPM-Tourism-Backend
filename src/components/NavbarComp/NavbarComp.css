@@ -1,0 +1,32 @@
+
+.nav-link{
+    text-decoration: none;
+   
+   color: #2ecc71!important;
+    padding: 10px 20px;
+}
+.nav-link-btn{
+    background-color: transparent;
+    border: none;
+    color: #2ecc71;
+    padding: 5px 10px;
+
+}
+.nav{
+    background-color: transparent!important;
+
+    position: fixed!important;
+    z-index: 2!important;
+    left: 0!important;
+    right: 0!important;
+    transition: .3s;
+    
+}
+.nav-heading{
+    color: #2ecc71!important;
+
+}
+.nav-active{
+    background-color: white!important;
+    
+}

@@ -14,6 +14,7 @@ import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import MyOrders from './components/MyOrders/MyOrders';
 import ManageOrders from './components/ManageOrders/ManageOrders';
 import AddPackage from './components/AddPackage/AddPackage';
+import Notfound from './components/Notfound/Notfound';
 initializeAuthentication()
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
             <PrivateRoute path='/addService'>
               <AddPackage></AddPackage>
             </PrivateRoute>
+            <Route path='*'>
+             <Notfound></Notfound>
+            </Route>
           </Switch>
           
         </BrowserRouter>

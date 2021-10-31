@@ -1,8 +1,15 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://ecstatic-austin-47ee8c.netlify.app/).
 
 ## Available Scripts
+
+## Key Features Of the React App
+1. Bootstrap,Node,Mongo,Firebase Authentication and React is used in this Single Page Application .
+2. User Can Login uisng google in this app
+3. User can book a tour package and can see those booked package in My Order section
+4. Admin can approve or cancel user's order.
+5. Admin also can add new package to the website.
 
 In the project directory, you can run:
 
